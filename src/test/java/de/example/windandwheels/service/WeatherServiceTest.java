@@ -33,8 +33,9 @@ class WeatherServiceTest {
         WeatherService service = new WeatherService(mockClient);
         List<WeatherForecast> result = service.getForecast();
         assertEquals(2,result.size());
-        assertEquals(15, result.getFirst().temperature());
-        assertEquals(12, result.getFirst().windSpeed());
+        assertEquals(15.0, result.getFirst().temperature());
+        assertEquals(12.0, result.getFirst().windSpeed());
+        assertEquals(19.0, result.getFirst().windGusts());
         assertEquals(35, result.get(1).precipitationProbability());
         assertTrue(result.get(1).time().endsWith("T11:00"));
         Mockito.verify(mockClient).fetchWeather();

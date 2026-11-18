@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     @GetMapping("/api/hello")
-    public static HelloResponse hello(@RequestParam(value = "name", defaultValue = "Welt") String name) {
-       // return new HelloResponse(String.format("Hallo, %s", name));
-        OpenMeteoClient omc = new OpenMeteoClient();
-        return new HelloResponse(omc.fetchWeather());
+    public HelloResponse hello(@RequestParam(value = "name", defaultValue = "Welt") String name) {
+       return new HelloResponse(String.format("Hallo, %s", name));
+
     }
 }
