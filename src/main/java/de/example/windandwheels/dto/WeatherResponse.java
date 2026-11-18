@@ -1,4 +1,7 @@
 package de.example.windandwheels.dto;
 
-public record WeatherResponse() {
+import java.util.List;
+
+public record WeatherResponse(String ort, List<WeatherForecast> forecasts) {
+
 }
