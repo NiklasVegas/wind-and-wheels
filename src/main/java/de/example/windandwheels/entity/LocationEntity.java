@@ -34,8 +34,7 @@ import jakarta.persistence.*;
 
         protected LocationEntity() {
         }
-        public LocationEntity(long id, String name, double latitude, double longitude){
-            this.id = id;
+        public LocationEntity(String name, double latitude, double longitude){
             this.name = name;
             this.latitude = latitude;
             this.longitude = longitude;
