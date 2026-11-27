@@ -6,6 +6,7 @@ import de.example.windandwheels.entity.LocationEntity;
 import de.example.windandwheels.entity.WeatherForecastEntity;
 import de.example.windandwheels.repository.LocationRepository;
 import de.example.windandwheels.repository.WeatherForecastRepository;
+import jakarta.transaction.Transactional;
 import org.jspecify.annotations.NonNull;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class WeatherPersistenceService {
         }
         return forecasts;
     }
-
+    @Transactional
     public void refreshKielForecast(){
 
         //Prüfen, ob Kiel existiert
